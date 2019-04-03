@@ -10,7 +10,8 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *Put your name here*
-* ID: *Put your ID here*
+* Name: Ngo Thanh Tung
+* ID: USTH-BI8-163
+
 
 
