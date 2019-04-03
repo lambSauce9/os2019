@@ -11,7 +11,7 @@ Student Info
 =======================
 
 * Name: Ngo Thanh Tung
-* ID: USTH-BI8-163
+* ID: USTH.BI8-163
 
 
 
