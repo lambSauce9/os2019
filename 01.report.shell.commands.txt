@@ -39,10 +39,9 @@ reboot   system boot  4.15.0-20-generi Wed Apr  3 03:12 - 03:13  (00:00)
 
 wtmp begins Tue Apr  2 17:34:50 2019
 lambsauce@lambsauce-VGN-SZ780N:~$ finger
+Login      Name        Tty      Idle  Login Time   Office     Office Phone
+lambsauce  LambSauce   tty7           Apr  3 08:38 (:0)
 
-Command 'finger' not found, but can be installed with:
-
-sudo apt install finger
 
 lambsauce@lambsauce-VGN-SZ780N:~$ w
  09:47:07 up  1:09,  1 user,  load average: 0,25, 0,43, 0,42
