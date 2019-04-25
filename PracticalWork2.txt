@@ -13,3 +13,6 @@ microcode	: 0x607
 cpu MHz		: 1443.570
 cache size	: 6144 KB
 physical id	: 0
+find *.jpg
+fr8k4tf8i6u21.jpg
+
