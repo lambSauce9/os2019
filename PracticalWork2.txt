@@ -1,0 +1,15 @@
+list
+40 /etc/passwd
+              total        used        free      shared  buff/cache   available
+Mem:           2,0G        940M        599M        168M        462M        686M
+Swap:          2,0G        7,5M        2,0G
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Duo CPU     T9300  @ 2.50GHz
+stepping	: 6
+microcode	: 0x607
+cpu MHz		: 1443.570
+cache size	: 6144 KB
+physical id	: 0
