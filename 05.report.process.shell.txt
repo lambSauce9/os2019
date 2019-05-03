@@ -1,0 +1,13 @@
+lambsauce@lambsauce-VGN-SZ780N:~/Downloads/os2019$ cat /proc/sched_debug | grep systemd
+ S        systemd     1       449.245644      2070   120         0.000000      1785.555672         0.000000 /autogroup-2
+lambsauce@lambsauce-VGN-SZ780N:~/Downloads/os2019$ cat /proc/1/sched
+systemd (1, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :       4161008.597460
+se.vruntime                                  :           493.339518
+se.sum_exec_runtime                          :          1785.788422
+se.nr_migrations                             :                  233
+nr_switches                                  :                 2071
+nr_voluntary_switches                        :                 1318
+nr_involuntary_switches                      :                  753
+
