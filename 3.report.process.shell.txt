@@ -1,0 +1,33 @@
+lambsauce@lambsauce-VGN-SZ780N:~$ ps -U root -u root u
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.2  0.3  30652  8112 ?        Ss   11:56   0:01 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    11:56   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        I<   11:56   0:00 [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        I<   11:56   0:00 [mm_percpu_wq]
+root         7  0.0  0.0      0     0 ?        S    11:56   0:00 [ksoftirqd/0]
+root         8  0.0  0.0      0     0 ?        I    11:56   0:00 [rcu_sched]
+root         9  0.0  0.0      0     0 ?        I    11:56   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    11:56   0:00 [migration/0]
+lambsauce@lambsauce-VGN-SZ780N:~$ firefox
+lambsauce@lambsauce-VGN-SZ780N:~$ pgrep firefox
+1534
+lambsauce@lambsauce-VGN-SZ780N:~$ cat /proc/1534/status
+Name:	firefox
+Umask:	0002
+State:	S (sleeping)
+Tgid:	1534
+Ngid:	0
+Pid:	1534
+PPid:	1375
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	256
+Groups:	4 24 27 30 46 112 127 1000 
+lambsauce@lambsauce-VGN-SZ780N:~$ pgrep firefox
+2650
+lambsauce@lambsauce-VGN-SZ780N:~$ kill -s STOP 2650
+lambsauce@lambsauce-VGN-SZ780N:~$ kill -s CONT 2650
+lambsauce@lambsauce-VGN-SZ780N:~$ kill -s KILL 2650
+
+
