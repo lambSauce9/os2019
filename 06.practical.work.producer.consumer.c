@@ -4,43 +4,81 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define BUFFER_SIZE 10
+#define BufferSize 10 
 
-typedef struct product
+
+int main()
 {
-	char type;  // 0=fried chicken, 1=French fries
-	int amount; // pieces or weight
-	char unit;  // 0=piece, 1=gram
-} item;
+	int option = 0;
+	item *Turkey, t, *notTurkey, nt;
+	Turkey = &t;
+	notTurkey = &nt;
+	printf("Turkey 1 or notTurkey 2 \n");
+	while (true)
+	{
+		scanf("%d", &option);
+		if (option == 1)
+		{
+			printf("Ottoman\n");
+			initTurkey(Turkey);
+			produce(Turkey);
+			produce(Turkey);
+			printf("Consuming...\n");
+			Turkey = consume();
+			break;
+		}
+		else if (option == 2)
+		{
+			printf("Remove kebab\n");
+			initNotTurkey(notTurkey);
+			produce(notTurkey);
+			produce(notTurkey);
+			printf("Consuming...\n");
+			notTurkey = consume();
+			break;
+		}
+		else
+		{
+			printf("1 or 2 no more Kebab\n");
+		}
+	}
+	return 0;
+}
+typedef struct item{
+   char type;
+   int amount;
+   char unit;
+}item;
 
-item buffer[BUFFER_SIZE];
-int first = 0;
-int last = 0;
+ item buffer[BufferSize] ;
+ int first  = 0;
+ int last = 0;
 
-void initChicken(item *smt) {
-	smt->type = 0;
-	smt->amount = 0;
-	smt->unit = 0;
+void initTurkey(item *Turkey){
+   Turkey->type = 0;
+   Turkey->amount = 0;
+   Turkey->unit = 0;
 }
 
-void initFries(item *smt) {
-    smt->type = 1;
-    smt->amount = 0;
-    smt->unit = 1;
+void initNotTurkey(item *notTurkey){
+   notTurkey->type = 1;
+   notTurkey->amount = 0;
+   notTurkey->unit = 1;
 }
-
 void produce(item *i)
 {
-	while ((first + 1) % BUFFER_SIZE == last)
+	while ((first + 1) % BufferSize == last)
 	{
-		printf("No free buffer item!\n");
+		printf("There is no more space\n");
 		return;
 	}
 	memcpy(&buffer[first], i, sizeof(item));
 	i->amount += 1;
-	first = (first + 1) % BUFFER_SIZE;
+	first = (first + 1) % BufferSize;
 	printf("First = %d\n", first);
-}
+    printf("Push one more to the buffer");
+
+} 
 
 item *consume()
 {
@@ -51,50 +89,9 @@ item *consume()
 	}
 	memcpy(i, &buffer[last], sizeof(item));
 	i->amount -= 1;
-	last = (last + 1) % BUFFER_SIZE;
+	last = (last + 1) % BufferSize;
 	printf("Last = %d\n", last);
-	return i;
-}
+	printf("The consumer consumes the item");
+    return i;
 
-int main()
-{
-	/* code */
-	int option = 0;
-	item *chicken, wing, *french, fries;
-	chicken = &wing;
-	french = &fries;
-	printf("Welcome to fooradise! \n");
-	printf("Our menu today: Chicken Wings and French Fries \n");
-	printf("Chicken Wings: 1 or French fries: 2 \n");
-	while (true)
-	{
-		/* code */
-		scanf("%d", &option);
-		if (option == 1)
-		{
-			printf("2 Chicken Wings coming right up!\n");
-			initChicken(chicken);
-			produce(chicken);
-			produce(chicken);
-			printf("Consuming...\n");
-			chicken = consume();
-			break;
-		}
-		else if (option == 2)
-		{
-			printf("2 French Fries coming right up!\n");
-			initFries(french);
-			produce(french);
-			produce(french);
-			printf("Consuming...\n");
-			french = consume();
-			break;
-		}
-		else
-		{
-			printf("Try again!\n");
-			printf("Chicken Wings: 1 or French fries: 2\n");
-		}
-	}
-	return 0;
 }
