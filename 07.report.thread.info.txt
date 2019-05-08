@@ -1,0 +1,8 @@
+lambsauce@lambsauce-VGN-SZ780N:~$ pgrep firefox
+1632
+lambsauce@lambsauce-VGN-SZ780N:~$ ps -o nlwp 1632
+NLWP
+  60
+lambsauce@lambsauce-VGN-SZ780N:~$ ls -l /proc/1632/task | wc -l
+54
+
